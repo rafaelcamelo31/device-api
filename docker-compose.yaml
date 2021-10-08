@@ -1,0 +1,38 @@
+version: '3.7'
+
+services:
+  api:
+    container_name: device-api
+    build:
+      context: .
+      target: development
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - ${SERVER_PORT}:${SERVER_PORT}
+      - 9229:9229
+    command: npm run start:dev
+    env_file:
+      - .env
+    networks:
+      - device
+    depends_on:
+      - mysql
+
+  mysql:
+    container_name: db-mysql
+    image: mysql
+    networks:
+      - device
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+    ports:
+      - 3306:3306
+    volumes:
+      - mysql-data:/var/lib/mysql
+networks:
+  device:
+volumes:
+  mysql-data:
