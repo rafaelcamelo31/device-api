@@ -5,16 +5,17 @@ services:
     container_name: device-api
     build:
       context: .
-      target: development
     volumes:
-      - .:/usr/src/app
-      - /usr/src/app/node_modules
+      - type: bind
+        source: .
+        target: /usr/src/app/
+    entrypoint: npm run start:dev
+    tty: true
+    env_file:
+      - .env
     ports:
       - ${SERVER_PORT}:${SERVER_PORT}
       - 9229:9229
-    command: npm run start:dev
-    env_file:
-      - .env
     networks:
       - device
     depends_on:
@@ -23,10 +24,14 @@ services:
   mysql:
     container_name: db-mysql
     image: mysql
+    command: --default-authentication-plugin=mysql_native_password --innodb-use-native-aio=0
+    tty: true
     networks:
       - device
+    env_file:
+      - .env
     environment:
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
     ports:
       - 3306:3306
@@ -34,5 +39,6 @@ services:
       - mysql-data:/var/lib/mysql
 networks:
   device:
+    driver: bridge
 volumes:
   mysql-data:
