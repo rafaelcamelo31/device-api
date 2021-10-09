@@ -10,7 +10,7 @@ export class createDeviceAndCategory1633733692483
       `CREATE TABLE \`category\` (\`id\` int NOT NULL AUTO_INCREMENT, \`name\` varchar(255) NOT NULL, PRIMARY KEY (\`id\`)) ENGINE=InnoDB`,
     );
     await queryRunner.query(
-      `CREATE TABLE \`device\` (\`id\` int NOT NULL AUTO_INCREMENT, \`color\` varchar(255) NOT NULL, \`partNumner\` int NOT NULL, \`categoryId\` int NULL, PRIMARY KEY (\`id\`)) ENGINE=InnoDB`,
+      `CREATE TABLE \`device\` (\`id\` int NOT NULL AUTO_INCREMENT, \`color\` varchar(255) NOT NULL, \`partNumber\` int NOT NULL, \`categoryId\` int NULL, PRIMARY KEY (\`id\`)) ENGINE=InnoDB`,
     );
     await queryRunner.query(
       `ALTER TABLE \`device\` ADD CONSTRAINT \`FK_cc4b2d26310a880c63116ed2c68\` FOREIGN KEY (\`categoryId\`) REFERENCES \`category\`(\`id\`) ON DELETE NO ACTION ON UPDATE NO ACTION`,
