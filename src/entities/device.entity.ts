@@ -1,7 +1,8 @@
 import { IsAlpha, IsPositive, MaxLength } from 'class-validator';
-import { Category } from 'src/categories/entities/category.entity';
-import { Column, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { Category } from './category.entity';
 
+@Entity()
 export class Device {
   @PrimaryGeneratedColumn()
   id: string;
