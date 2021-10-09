@@ -8,5 +8,5 @@
   "entities": ["dist/**/**/*.entity.js"],
   "synchronize": false,
   "migrations": ["dist/migrations/*.js"],
-  "cli": { "migrationsDir": "/migrations" }
+  "cli": { "migrationsDir": "migrations" }
 }
