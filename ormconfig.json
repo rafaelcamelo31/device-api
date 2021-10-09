@@ -1,5 +1,5 @@
 {
-  "host": "172.17.0.1",
+  "host": "db-mysql",
   "port": 3306,
   "username": "root",
   "password": "root",
