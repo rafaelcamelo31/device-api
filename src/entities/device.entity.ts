@@ -17,5 +17,5 @@ export class Device {
 
   @IsPositive()
   @Column()
-  partNumner: number;
+  partNumber: number;
 }
