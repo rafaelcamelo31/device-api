@@ -44,6 +44,14 @@ $ npm run start:dev
 # production mode
 $ npm run start:prod
 ```
+## .env values
+```bash
+SERVER_PORT=3000
+
+MYSQL_ROOT_PASSWORD=root
+MYSQL_DATABASE=devices
+```
+
 
 ## Test
 
