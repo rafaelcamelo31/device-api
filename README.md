@@ -35,15 +35,20 @@ $ npm install
 ## Running the app
 
 ```bash
-# development
-$ npm run start
+#run it on docker container
+docker-compose up -d
 
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+#if the server can not connect to the database
+check ormconfig.json and change the host ip accordingly
 ```
+## .env values
+```bash
+SERVER_PORT=3000
+
+MYSQL_ROOT_PASSWORD=root
+MYSQL_DATABASE=devices
+```
+
 
 ## Test
 
