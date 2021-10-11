@@ -17,7 +17,7 @@ export class DevicesService {
   }
 
   findAll() {
-    return this.repo.find();
+    return this.repo.find({ relations: ['category'] });
   }
 
   findOne(id: number) {
