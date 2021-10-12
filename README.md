@@ -57,6 +57,7 @@ npx typeorm migration:run
 ```
 
 ## .env values
+If you need to test it on local environment, look for Dockerfile and docker-compose.yaml and set following values on ormconfig.json
 ```bash
 SERVER_PORT=3000
 
