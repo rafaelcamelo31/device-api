@@ -35,6 +35,9 @@ In production: https://device-back.herokuapp.com/
 - Category management: https://device-back.herokuapp.com/categories
 - Category detail: https://device-back.herokuapp.com/categories/detail/id
 
+## Swagger UI
+https://device-back.herokuapp.com/api/
+
 ## Installation
 
 ```bash
