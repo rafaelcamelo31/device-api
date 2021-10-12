@@ -8,5 +8,7 @@
   "entities": ["dist/**/**/*.entity.js"],
   "synchronize": false,
   "migrations": ["dist/migrations/*.js"],
-  "cli": { "migrationsDir": "migrations" }
+  "cli": { "migrationsDir": "migrations" },
+  "url": "mysql://f29qu8hbtvgosmb3:l11260f1l7u816db@u6354r3es4optspf.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/hslnbmqu1l78k819",
+  "ssl": { "rejectUnauthorized": false }
 }
