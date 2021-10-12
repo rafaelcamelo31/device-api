@@ -24,7 +24,16 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+A web api proposed by Instituto de Pesquisa Eldorado, as a part of web development challenge for Fullstack Developer position.
+
+## API Path
+In production: https://device-back.herokuapp.com/  
+
+- Device management: https://device-back.herokuapp.com/devices
+- Device detail: https://device-back.herokuapp.com/devices/detail/id
+
+- Category management: https://device-back.herokuapp.com/categories
+- Category detail: https://device-back.herokuapp.com/categories/detail/id
 
 ## Installation
 
@@ -41,6 +50,12 @@ docker-compose up -d
 #if the server can not connect to the database
 check ormconfig.json and change the host ip accordingly
 ```
+
+## Database migration
+```bash
+npx typeorm migration:run
+```
+
 ## .env values
 ```bash
 SERVER_PORT=3000
